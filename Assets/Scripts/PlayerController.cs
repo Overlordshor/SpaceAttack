@@ -9,17 +9,24 @@ public class PlayerController : Ship
     {
         
     }
-    void Start()
+    private void Start()
     {
         transform.position = new Vector3(0, 0, 0);
     }
   
-    void Update()
+    private void Update()
     {
         SpaceMovement();
         LaserFire();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("LaserEnemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
     private void SpaceMovement()
     {
         if (transform.position.x < -8.3f)

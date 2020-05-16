@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class EnemyController : Ship
 {
@@ -18,6 +17,13 @@ public class EnemyController : Ship
         LaserFire();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Laser") || collision.collider.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
     private void SpaceMovement()
     {
         transform.Translate(Vector3.down * Time.deltaTime * speed);

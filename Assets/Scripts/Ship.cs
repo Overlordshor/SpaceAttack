@@ -22,4 +22,5 @@ public class Ship : MonoBehaviour
             timeReloadFire -= Time.deltaTime;
         }
     }
+
 }
