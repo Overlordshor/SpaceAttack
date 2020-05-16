@@ -8,6 +8,7 @@ public class PlayerController : Ship
     private float horizontalInput;
     private float verticalInput;
 
+    private AudioSource laserShot;
     public void LifeSubstraction()
     {
         lives--;
@@ -21,6 +22,7 @@ public class PlayerController : Ship
     private void Start()
     {
         transform.position = new Vector3(0, 0, 0);
+        laserShot = GetComponent<AudioSource>();
     }
   
     private void Update()
@@ -72,6 +74,7 @@ public class PlayerController : Ship
         if (timeReloadFire < 0)
         {
             Instantiate(LaserPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+            laserShot.Play();
             timeReloadFire = timeFire;
         }
     }

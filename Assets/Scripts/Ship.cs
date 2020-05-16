@@ -11,11 +11,9 @@ public class Ship : MonoBehaviour
     public Ship()
     {
         speed = 5f;
-        timeReloadFire = timeFire;
+        timeReloadFire = timeFire; 
     }
-    private void Start()
-    {
-    }
+
     protected virtual void LaserFire()
     {
         if (timeReloadFire > 0)

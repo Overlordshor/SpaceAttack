@@ -3,15 +3,18 @@
 public class EnemyController : Ship
 {
     public GameObject EnemyExplosionPrefab;
+
+    private AudioSource laserShot;
     public EnemyController()
     {
         timeFire = 1.5f;
         speed = 3f;
     }
-    void Start()
-    {
-    }
 
+    private void Start()
+    {
+        laserShot = GetComponent<AudioSource>();
+    }
     void Update()
     {
         SpaceMovement();
@@ -51,6 +54,7 @@ public class EnemyController : Ship
         if (timeReloadFire < 0)
         {
             Instantiate(LaserPrefab, transform.position - new Vector3(0, 0.5f, 0), Quaternion.identity);
+            laserShot.Play();
             timeReloadFire = timeFire;
         }
     }
