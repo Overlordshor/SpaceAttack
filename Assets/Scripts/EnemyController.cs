@@ -6,7 +6,7 @@ public class EnemyController : Ship
     public EnemyController()
     {
         timeFire = 1.5f;
-        speed = 1f;
+        speed = 3f;
     }
     void Start()
     {
