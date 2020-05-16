@@ -19,8 +19,9 @@ public class EnemyController : Ship
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Laser") || collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Laser"))
         {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

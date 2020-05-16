@@ -5,10 +5,7 @@ public class PlayerController : Ship
     private float horizontalInput;
     private float verticalInput;
 
-    public PlayerController()
-    {
-        
-    }
+    
     private void Start()
     {
         transform.position = new Vector3(0, 0, 0);
@@ -22,11 +19,28 @@ public class PlayerController : Ship
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("LaserEnemy"))
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            LifeSubstraction();
+            Destroy(collision.gameObject);
+        }
+        if (collision.collider.CompareTag("LaserEnemy"))
+        {
+            LifeSubstraction();
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void LifeSubstraction()
+    {
+        lives--;
+
+        if (lives < 1)
         {
             Destroy(gameObject);
         }
     }
+
     private void SpaceMovement()
     {
         if (transform.position.x < -8.3f)

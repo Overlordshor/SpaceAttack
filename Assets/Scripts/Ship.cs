@@ -6,6 +6,7 @@ public class Ship : MonoBehaviour
     protected float speed;
     protected float timeFire = 0.5f;
     protected float timeReloadFire;
+    protected int lives = 5;
     
     public Ship()
     {
