@@ -338,3 +338,11 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Assets/Materials/BackgroundSpace.mat
+/Assets/Materials/Shaders/StarNest.shader
+/Assets/Materials/Shaders/StarNestSkybox.shader
+/Assets/Scene/SpaceGame.unity
+/Assets/Audio
+/Library
+/ProjectSettings
+/Temp
