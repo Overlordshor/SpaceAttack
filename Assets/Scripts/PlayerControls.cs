@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    public float Speed = 5;
+    [SerializeField] private float speed = 5;
     private float horizontalInput;
     private float verticalInput;
     void Start()
@@ -14,6 +14,11 @@ public class PlayerControls : MonoBehaviour
 
     
     void Update()
+    {
+        SpaceMovement();
+    }
+
+    private void SpaceMovement()
     {
         if (transform.position.x < -8.3f)
         {
@@ -31,10 +36,10 @@ public class PlayerControls : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, 4.33f, 0);
         }
-        transform.Translate(Vector3.right * Time.deltaTime * Speed * horizontalInput);
+        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         horizontalInput = Input.GetAxis("Horizontal");
 
-        transform.Translate(Vector3.up * Time.deltaTime * Speed * verticalInput);
+        transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
         verticalInput = Input.GetAxis("Vertical");
     }
 }
