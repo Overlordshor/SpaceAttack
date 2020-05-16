@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    public GameObject LaserPrefab;
+
     [SerializeField] private float speed = 5;
     private float horizontalInput;
     private float verticalInput;
@@ -16,6 +16,11 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         SpaceMovement();
+        if (Input.GetMouseButton(0))
+        {
+            Instantiate(LaserPrefab, transform.position + new Vector3(0, 1.3f, 0), Quaternion.identity);
+        }
+        
     }
 
     private void SpaceMovement()
