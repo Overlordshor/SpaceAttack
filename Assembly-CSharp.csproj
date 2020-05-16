@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\LaserEnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
+    <Compile Include="Assets\Scripts\UseCoroutines.cs" />
     <None Include="Assets\Materials\Shaders\StarNestSkybox.shader" />
     <None Include="Assets\Materials\Shaders\StarNest.shader" />
     <Reference Include="UnityEngine">
