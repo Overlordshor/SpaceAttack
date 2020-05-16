@@ -63,13 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\ExplosionSound.cs" />
     <Compile Include="Assets\Scripts\LaserController.cs" />
     <Compile Include="Assets\Scripts\LaserEnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
-    <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\UseCoroutines.cs" />
     <None Include="Assets\Materials\Shaders\StarNestSkybox.shader" />
     <None Include="Assets\Materials\Shaders\StarNest.shader" />
