@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class LaserController : MonoBehaviour
+public class LaserEnemyController : MonoBehaviour
 {
     private float speed = 20f;
     void Start()
@@ -11,9 +11,9 @@ public class LaserController : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
+        transform.Translate(Vector3.down * Time.deltaTime * speed);
 
-        if (transform.position.y >= 5.36f)
+        if (transform.position.y <= -5.55f)
         {
             Destroy(gameObject, 0.1f);
         }

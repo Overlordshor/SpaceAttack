@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6089293481311175170}
   - component: {fileID: 8361652310787492313}
-  - component: {fileID: 3891755101065027567}
   - component: {fileID: 3757997738396681910}
   - component: {fileID: 254101557168667163}
+  - component: {fileID: 1003547359832627977}
   m_Layer: 0
-  m_Name: laser
+  m_Name: laserEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3891755101065027567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206948941955446801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df94a496d76c1142889f8fb75a7dd1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &3757997738396681910
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +131,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1003547359832627977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206948941955446801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9892c2a8dd2879408958a2809062309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

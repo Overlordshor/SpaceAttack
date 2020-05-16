@@ -1,45 +1,23 @@
 ﻿using UnityEngine;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerController : Ship
 {
-    public GameObject LaserPrefab;
-
-    private float speed;
     private float horizontalInput;
     private float verticalInput;
 
-    private float timeFire = 0.5f;
-    private float timeReloadFire;
-    public PlayerControls()
+    public PlayerController()
     {
-        speed = 5f;
-        timeReloadFire = timeFire;
+        
     }
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
     }
-
-    
+  
     void Update()
     {
         SpaceMovement();
         LaserFire();
-
-    }
-
-    private void LaserFire()
-    {
-        if (timeReloadFire > 0)
-        {
-            timeReloadFire -= Time.deltaTime;
-        }       
-        if (timeReloadFire < 0)
-        {
-                Instantiate(LaserPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                timeReloadFire = timeFire;
-        }
-        
     }
 
     private void SpaceMovement()
@@ -65,5 +43,16 @@ public class PlayerControls : MonoBehaviour
 
         transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
         verticalInput = Input.GetAxis("Vertical");
+    }
+
+    protected override void LaserFire()
+    {
+        base.LaserFire();
+
+        if (timeReloadFire < 0)
+        {
+            Instantiate(LaserPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+            timeReloadFire = timeFire;
+        }
     }
 }
