@@ -2,6 +2,7 @@
 
 public class EnemyController : Ship
 {
+    public GameObject EnemyExplosionPrefab;
     public EnemyController()
     {
         timeFire = 1.5f;
@@ -22,6 +23,15 @@ public class EnemyController : Ship
         if (collision.collider.CompareTag("Laser"))
         {
             Destroy(collision.gameObject);
+            Instantiate(EnemyExplosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.collider.CompareTag("Player"))
+        {
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            player.LifeSubstraction();
+            Instantiate(player.ExplosionPrefab, player.transform.position, Quaternion.identity);
+            Instantiate(EnemyExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
