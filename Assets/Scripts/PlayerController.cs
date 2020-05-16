@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : Ship
 {
@@ -17,6 +18,7 @@ public class PlayerController : Ship
         {
             Instantiate(BigExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
     private void Start()
