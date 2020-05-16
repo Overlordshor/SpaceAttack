@@ -3,6 +3,7 @@
 public class PlayerController : Ship
 {
     public GameObject ExplosionPrefab;
+    public GameObject BigExplosionPrefab;
 
     private float horizontalInput;
     private float verticalInput;
@@ -13,6 +14,7 @@ public class PlayerController : Ship
 
         if (lives < 1)
         {
+            Instantiate(BigExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

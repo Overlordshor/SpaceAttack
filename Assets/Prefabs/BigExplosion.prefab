@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2877126357693662854}
   - component: {fileID: 2003138061404920029}
   m_Layer: 8
-  m_Name: Explosion
+  m_Name: BigExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1647265412318263703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.117003016, y: 0.117003016, z: 0.117003016}
+  m_LocalScale: {x: 0.31100953, y: 0.31100953, z: 0.31100953}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
