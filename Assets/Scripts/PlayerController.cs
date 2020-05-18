@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.Contracts;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : Ship
 {
     public GameObject ExplosionPrefab;
     public GameObject BigExplosionPrefab;
+    public Animator PlayerAnimator;
 
     private float horizontalInput;
     private float verticalInput;
@@ -46,6 +48,28 @@ public class PlayerController : Ship
 
     private void SpaceMovement()
     {
+        MoveThroughScreen();
+
+        MoveHorizontal();
+        MoveVertical();
+
+        TurnAnimation();
+    }
+
+    private void MoveVertical()
+    {
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);     
+    }
+
+    private void MoveHorizontal()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);   
+    }
+
+    private void MoveThroughScreen()
+    {
         if (transform.position.x < -8.3f)
         {
             transform.position = new Vector3(-8.3f, transform.position.y, 0);
@@ -62,11 +86,26 @@ public class PlayerController : Ship
         {
             transform.position = new Vector3(transform.position.x, 4.33f, 0);
         }
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
-        horizontalInput = Input.GetAxis("Horizontal");
+    }
 
-        transform.Translate(Vector3.up * Time.deltaTime * speed * verticalInput);
-        verticalInput = Input.GetAxis("Vertical");
+    private void TurnAnimation()
+    {
+        if (horizontalInput > 0)
+        {
+            PlayerAnimator.SetBool("Left", false);
+            PlayerAnimator.SetBool("Right", true);
+        }
+        if (horizontalInput < 0)
+        {
+            PlayerAnimator.SetBool("Left", true);
+            PlayerAnimator.SetBool("Right", false);
+        }
+        if (horizontalInput == 0)
+        {
+            PlayerAnimator.SetBool("Left", false);
+            PlayerAnimator.SetBool("Right", false);
+        }
+        horizontalInput = 0;
     }
 
     protected override void LaserFire()
