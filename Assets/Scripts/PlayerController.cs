@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Contracts;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : Ship

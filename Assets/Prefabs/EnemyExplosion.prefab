@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4250098727680554152}
   - component: {fileID: -5829055891918405651}
   - component: {fileID: -5518704235776737686}
+  - component: {fileID: 235469216083718019}
   m_Layer: 8
   m_Name: EnemyExplosion
   m_TagString: Untagged
@@ -209,5 +210,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdb951b49674c0d4f87488b258b97635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &235469216083718019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250098727680554153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d633ee31f8ca94489727c198c89c8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

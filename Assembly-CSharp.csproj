@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\ExplosionDestroyObject.cs" />
     <Compile Include="Assets\Scripts\ExplosionSound.cs" />
     <Compile Include="Assets\Scripts\LaserController.cs" />
     <Compile Include="Assets\Scripts\LaserEnemyController.cs" />
