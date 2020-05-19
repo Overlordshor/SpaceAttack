@@ -3,10 +3,13 @@
 public class Ship : MonoBehaviour
 {
     public GameObject LaserPrefab;
+
+    public int Lifes = 5;
+
     protected float speed;
     protected float timeFire = 0.5f;
     protected float timeReloadFire;
-    protected int lives = 5;
+    
     
     public Ship()
     {

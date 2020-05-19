@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Data;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : Ship
 {
@@ -7,21 +9,32 @@ public class PlayerController : Ship
     public GameObject BigExplosionPrefab;
     public Animator PlayerAnimator;
 
+    public int Score;
+
+    public Slider HealthBar;
+    public GameObject HealthBarFill;
+
     private float horizontalInput;
     private float verticalInput;
 
     private AudioSource laserShot;
     public void LifeSubstraction()
     {
-        lives--;
+        Lifes--;
 
-        if (lives < 1)
+        if (Lifes < 1)
         {
             Instantiate(BigExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
         }
     }
+
+    public void AddScore()
+    {
+        Score++;
+    }
+
     private void Start()
     {
         transform.position = new Vector3(0, 0, 0);
@@ -30,10 +43,31 @@ public class PlayerController : Ship
   
     private void Update()
     {
+        SetHealthBar();
         SpaceMovement();
         LaserFire();
     }
 
+    private void SetHealthBar()
+    {
+        HealthBar.value = Lifes;
+        switch (Lifes)
+        {
+            case 5: HealthBarFill.GetComponent<Image>().color = new Color(0, 1f, 0); break;
+            case 4: HealthBarFill.GetComponent<Image>().color = new Color(0.5f, 1f, 0); break;
+            case 3: HealthBarFill.GetComponent<Image>().color = new Color(1f, 1f, 0); break;
+            case 2: HealthBarFill.GetComponent<Image>().color = new Color(1f, 0.5f, 0); break;
+            case 1: HealthBarFill.GetComponent<Image>().color = new Color(1f, 0, 0); break;
+
+        }
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 100, 100), "Очки: " + Score);
+    }
+
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
