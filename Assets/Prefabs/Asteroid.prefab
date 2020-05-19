@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2265306437802131563}
   - component: {fileID: 7429855378730683842}
   - component: {fileID: 420870143}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ Rigidbody2D:
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7429855378730683842
 MonoBehaviour:
   m_ObjectHideFlags: 0

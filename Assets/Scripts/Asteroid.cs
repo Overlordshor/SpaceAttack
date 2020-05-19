@@ -7,7 +7,8 @@ public class Asteroid : MonoBehaviour
     private float speed;
     public Asteroid()
     {
-        speed = 2.5f;    }
+        speed = 2.5f;   
+    }
 
     void Update()
     {
