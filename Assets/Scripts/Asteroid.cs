@@ -7,7 +7,7 @@ public class Asteroid : MonoBehaviour
     private float speed;
     public Asteroid()
     {
-        speed = 2.5f;   
+        speed = 2.5f;
     }
 
     private void Update()
@@ -25,23 +25,10 @@ public class Asteroid : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy"))
+
+        if (collision.collider.CompareTag("LaserEnemy") || collision.collider.CompareTag("Laser"))
         {
             Destroy(collision.gameObject);
-            Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-        if (collision.collider.CompareTag("Laser"))
-        {
-            Destroy(collision.gameObject);
-            Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-        if (collision.collider.CompareTag("Player"))
-        {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            player.LifeSubstraction();
-            Instantiate(player.ExplosionPrefab, player.transform.position, Quaternion.identity);
             Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

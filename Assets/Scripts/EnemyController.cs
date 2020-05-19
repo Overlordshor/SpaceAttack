@@ -37,6 +37,15 @@ public class EnemyController : Ship
             Instantiate(EnemyExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        if (collision.collider.CompareTag("Asteroid"))
+        {
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+            Instantiate(asteroid.ExplosionPrefab, asteroid.transform.position, Quaternion.identity);
+            Instantiate(EnemyExplosionPrefab, transform.position, Quaternion.identity);
+
+            Destroy(asteroid.gameObject);
+            Destroy(gameObject);
+        }
     }
     private void SpaceMovement()
     {
