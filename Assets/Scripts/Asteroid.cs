@@ -10,7 +10,7 @@ public class Asteroid : MonoBehaviour
         speed = 2.5f;   
     }
 
-    void Update()
+    private void Update()
     {
         SpaceMovement();
     }

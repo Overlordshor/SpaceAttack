@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 801491739701942732}
   - component: {fileID: 2265306437802131563}
   - component: {fileID: 7429855378730683842}
-  - component: {fileID: 420870143}
+  - component: {fileID: 8480121679218197322}
   m_Layer: 8
   m_Name: Asteroid
   m_TagString: Enemy
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionPrefab: {fileID: 4250098727680554153, guid: cacb139fc03beba42ab4e94445a22e81,
     type: 3}
---- !u!58 &420870143
-CircleCollider2D:
+--- !u!61 &8480121679218197322
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,6 +132,16 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06563018, y: 0.017842667}
+  m_Offset: {x: 0.035178423, y: 0.030875206}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1.1308323
+  m_Size: {x: 2.0213614, y: 2.2730923}
+  m_EdgeRadius: 0
